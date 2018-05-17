@@ -8,11 +8,28 @@
 </ion-header>
 
 <ion-content padding>
-  <h3>Ionic Menu Starter</h3>
+  <ion-list>
+    <ion-item>
+      <ion-label floating>Distance</ion-label>
+      <ion-input type="number" [(ngModel)]="user.distance"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Gender</ion-label>
+      <ion-select [(ngModel)]="user.gender">
+        <ion-option value="female">Female</ion-option>
+        <ion-option value="male">Male</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Age:
+        <ion-badge *ngIf="user.age"> {{user.age}}</ion-badge>
+      </ion-label>
+      <ion-range min="10" max="120" [(ngModel)]="user.age" >
+        <ion-label range-left>10</ion-label>
+        <ion-label range-right>120</ion-label>
+      </ion-range>
+    </ion-item>
+  </ion-list>
 
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
-
-  <button ion-button secondary menuToggle>Toggle Menu</button>
+  <button block ion-button (click)="calculate()">Calculate</button>
 </ion-content>
