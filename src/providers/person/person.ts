@@ -1,6 +1,7 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import 'rxjs/add/operator/map';
 
+import { CooperProvider } from '../cooper/cooper';
 /*
   Generated class for the PersonProvider provider.
 
@@ -9,9 +10,14 @@ import { Injectable } from '@angular/core';
 */
 @Injectable()
 export class PersonProvider {
+  public gender: string;
+  public age: number;
+  public assessmentMessage: string;
 
-  constructor(public http: HttpClient) {
-    console.log('Hello PersonProvider Provider');
+  constructor(private cooper: CooperProvider) {
   }
 
+  doAssessment(distance: number): void {
+    this.assessmentMessage = this.cooper.assess(this, distance);
+  }
 }
