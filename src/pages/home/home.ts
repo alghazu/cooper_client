@@ -10,7 +10,7 @@ import { PersonProvider } from '../../providers/person/person';
 export class HomePage {
   user: any = {};
   constructor(public navCtrl: NavController, public person: PersonProvider) {
-    this.user = {distance: 1000, age: 20}
+    this.user = {distance: 1000, age: 20, gender: 'female' };
   }
   calculate() {
     this.person.age = this.user.age;
