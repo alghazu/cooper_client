@@ -12,6 +12,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { PersonProvider } from '../providers/person/person';
 import { CooperProvider } from '../providers/cooper/cooper';
+import { PerformanceDataProvider } from '../providers/performance-data/performance-data';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { CooperProvider } from '../providers/cooper/cooper';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     PersonProvider,
     CooperProvider,
-    Angular2TokenService
+    Angular2TokenService,
+    PerformanceDataProvider
   ]
 })
 export class AppModule {}
