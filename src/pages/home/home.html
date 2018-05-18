@@ -32,6 +32,8 @@
   </ion-list>
 
   <button block ion-button (click)="calculate()">Calculate</button>
+  <button block ion-button (click)="showResults()">All Results</button>
+
 
   <ion-card *ngIf="person?.assessmentMessage">
     <ion-card-header>
@@ -40,6 +42,7 @@
     <ion-card-content>
       Gender: {{person?.gender}}, Age: {{person?.age}} <br/> Result: {{person?.assessmentMessage}}
     </ion-card-content>
+    <button block ion-button (click)="saveResults()">Save Results</button>
   </ion-card>
 
 </ion-content>
