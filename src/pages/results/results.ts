@@ -8,7 +8,7 @@ import { PerformanceDataProvider } from '../../providers/performance-data/perfor
 })
 export class ResultsPage {
   results = [];
-  label = [];
+  labels = [];
   data = [];
   doughnutChartType: string = 'doughnut';
   radarChartType: string = 'radar';
@@ -49,8 +49,15 @@ export class ResultsPage {
 
     collection.forEach(entry => {
       count += entry.data.message == value ? 1 : 0;
-  })
+    })
 
-  return count;
-}
+    return count;
+  }
+  chartClicked(event: any): void {
+    console.log(event);
+  }
+
+  chartHovered(event: any): void {
+    console.log(event);
+  }
 }
